@@ -1,0 +1,71 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "A beautiful, modern music player built with Electron.js, Bootstrap, and Toast notifications. Features a sleek dark theme with glass-morphism effects and advanced music management capabilities.",
+  "main": "main.js",
+  "homepage": "https://github.com/mjfrontdev/music-player",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjfrontdev/music-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mjfrontdev/music-player/issues"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "music",
+    "player",
+    "electron",
+    "bootstrap",
+    "desktop",
+    "audio",
+    "playlist",
+    "favorites",
+    "equalizer",
+    "lyrics"
+  ],
+  "author": {
+    "name": "محمد حسن مجیدیان",
+    "email": "mahsanmaji@gmail.com",
+    "url": "https://github.com/mjfrontdev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "toastr": "^2.1.4",
+    "@fortawesome/fontawesome-free": "^6.4.2"
+  },
+  "build": {
+    "appId": "com.musicplayer.app",
+    "productName": "Music Player",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  }
+}
